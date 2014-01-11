@@ -19,6 +19,15 @@
 		89BB92D81880DAEC00D8D3BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92C01880DAEC00D8D3BE /* UIKit.framework */; };
 		89BB92E01880DAEC00D8D3BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89BB92DE1880DAEC00D8D3BE /* InfoPlist.strings */; };
 		89BB92E21880DAEC00D8D3BE /* MegaHealthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB92E11880DAEC00D8D3BE /* MegaHealthTests.m */; };
+		89BB92EC1880DD3800D8D3BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92EB1880DD3800D8D3BE /* AudioToolbox.framework */; };
+		89BB92EE1880DD3E00D8D3BE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92ED1880DD3E00D8D3BE /* CFNetwork.framework */; };
+		89BB92F01880DD4B00D8D3BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92EF1880DD4B00D8D3BE /* CoreLocation.framework */; };
+		89BB92F21880DD5200D8D3BE /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92F11880DD5200D8D3BE /* libz.1.1.3.dylib */; };
+		89BB92F41880DD5700D8D3BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92F31880DD5700D8D3BE /* MobileCoreServices.framework */; };
+		89BB92F61880DD5D00D8D3BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92F51880DD5D00D8D3BE /* QuartzCore.framework */; };
+		89BB92F81880DD6300D8D3BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92F71880DD6300D8D3BE /* Security.framework */; };
+		89BB92FA1880DD7000D8D3BE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92F91880DD7000D8D3BE /* StoreKit.framework */; };
+		89BB92FC1880DD7900D8D3BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92FB1880DD7900D8D3BE /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +54,18 @@
 		89BB92CE1880DAEC00D8D3BE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		89BB92D41880DAEC00D8D3BE /* MegaHealthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MegaHealthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BB92D51880DAEC00D8D3BE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		89BB92DD1880DAEC00D8D3BE /* MegaHealthTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MegaHealthTests-Info.plist"; sourceTree = "<group>"; };
+		89BB92DD1880DAEC00D8D3BE /* MegaHealthTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MegaHealthTests-Info.plist"; path = "MegaHealthTests/MegaHealthTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		89BB92DF1880DAEC00D8D3BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89BB92E11880DAEC00D8D3BE /* MegaHealthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MegaHealthTests.m; sourceTree = "<group>"; };
+		89BB92EB1880DD3800D8D3BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		89BB92ED1880DD3E00D8D3BE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		89BB92EF1880DD4B00D8D3BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		89BB92F11880DD5200D8D3BE /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		89BB92F31880DD5700D8D3BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		89BB92F51880DD5D00D8D3BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		89BB92F71880DD6300D8D3BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		89BB92F91880DD7000D8D3BE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		89BB92FB1880DD7900D8D3BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +73,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BB92FC1880DD7900D8D3BE /* SystemConfiguration.framework in Frameworks */,
+				89BB92FA1880DD7000D8D3BE /* StoreKit.framework in Frameworks */,
+				89BB92F81880DD6300D8D3BE /* Security.framework in Frameworks */,
+				89BB92F61880DD5D00D8D3BE /* QuartzCore.framework in Frameworks */,
+				89BB92F41880DD5700D8D3BE /* MobileCoreServices.framework in Frameworks */,
+				89BB92F21880DD5200D8D3BE /* libz.1.1.3.dylib in Frameworks */,
+				89BB92F01880DD4B00D8D3BE /* CoreLocation.framework in Frameworks */,
 				89BB92BF1880DAEC00D8D3BE /* CoreGraphics.framework in Frameworks */,
+				89BB92EE1880DD3E00D8D3BE /* CFNetwork.framework in Frameworks */,
+				89BB92EC1880DD3800D8D3BE /* AudioToolbox.framework in Frameworks */,
 				89BB92C11880DAEC00D8D3BE /* UIKit.framework in Frameworks */,
 				89BB92BD1880DAEC00D8D3BE /* Foundation.framework in Frameworks */,
 			);
@@ -77,9 +104,11 @@
 		89BB92B01880DAEC00D8D3BE = {
 			isa = PBXGroup;
 			children = (
-				89BB92C21880DAEC00D8D3BE /* MegaHealth */,
-				89BB92DB1880DAEC00D8D3BE /* MegaHealthTests */,
-				89BB92BB1880DAEC00D8D3BE /* Frameworks */,
+				89BB92FE1880DDB200D8D3BE /* Classes */,
+				89BB92FF1880DDB700D8D3BE /* Resources */,
+				89BB92DB1880DAEC00D8D3BE /* Tests */,
+				89BB92FD1880DD9D00D8D3BE /* ExternalFrameworks */,
+				89BB92BB1880DAEC00D8D3BE /* AppleFrameworks */,
 				89BB92BA1880DAEC00D8D3BE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,45 +122,33 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		89BB92BB1880DAEC00D8D3BE /* Frameworks */ = {
+		89BB92BB1880DAEC00D8D3BE /* AppleFrameworks */ = {
 			isa = PBXGroup;
 			children = (
+				89BB92FB1880DD7900D8D3BE /* SystemConfiguration.framework */,
+				89BB92F91880DD7000D8D3BE /* StoreKit.framework */,
+				89BB92F71880DD6300D8D3BE /* Security.framework */,
+				89BB92F51880DD5D00D8D3BE /* QuartzCore.framework */,
+				89BB92F31880DD5700D8D3BE /* MobileCoreServices.framework */,
+				89BB92F11880DD5200D8D3BE /* libz.1.1.3.dylib */,
+				89BB92EF1880DD4B00D8D3BE /* CoreLocation.framework */,
+				89BB92ED1880DD3E00D8D3BE /* CFNetwork.framework */,
+				89BB92EB1880DD3800D8D3BE /* AudioToolbox.framework */,
 				89BB92BC1880DAEC00D8D3BE /* Foundation.framework */,
 				89BB92BE1880DAEC00D8D3BE /* CoreGraphics.framework */,
 				89BB92C01880DAEC00D8D3BE /* UIKit.framework */,
 				89BB92D51880DAEC00D8D3BE /* XCTest.framework */,
 			);
-			name = Frameworks;
+			name = AppleFrameworks;
 			sourceTree = "<group>";
 		};
-		89BB92C21880DAEC00D8D3BE /* MegaHealth */ = {
-			isa = PBXGroup;
-			children = (
-				89BB92CB1880DAEC00D8D3BE /* MGHAppDelegate.h */,
-				89BB92CC1880DAEC00D8D3BE /* MGHAppDelegate.m */,
-				89BB92CE1880DAEC00D8D3BE /* Images.xcassets */,
-				89BB92C31880DAEC00D8D3BE /* Supporting Files */,
-			);
-			path = MegaHealth;
-			sourceTree = "<group>";
-		};
-		89BB92C31880DAEC00D8D3BE /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				89BB92C41880DAEC00D8D3BE /* MegaHealth-Info.plist */,
-				89BB92C51880DAEC00D8D3BE /* InfoPlist.strings */,
-				89BB92C81880DAEC00D8D3BE /* main.m */,
-				89BB92CA1880DAEC00D8D3BE /* MegaHealth-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		89BB92DB1880DAEC00D8D3BE /* MegaHealthTests */ = {
+		89BB92DB1880DAEC00D8D3BE /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				89BB92E11880DAEC00D8D3BE /* MegaHealthTests.m */,
 				89BB92DC1880DAEC00D8D3BE /* Supporting Files */,
 			);
+			name = Tests;
 			path = MegaHealthTests;
 			sourceTree = "<group>";
 		};
@@ -142,6 +159,36 @@
 				89BB92DE1880DAEC00D8D3BE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		89BB92FD1880DD9D00D8D3BE /* ExternalFrameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ExternalFrameworks;
+			sourceTree = "<group>";
+		};
+		89BB92FE1880DDB200D8D3BE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				89BB92CB1880DAEC00D8D3BE /* MGHAppDelegate.h */,
+				89BB92CC1880DAEC00D8D3BE /* MGHAppDelegate.m */,
+			);
+			name = Classes;
+			path = MegaHealth;
+			sourceTree = "<group>";
+		};
+		89BB92FF1880DDB700D8D3BE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89BB92CE1880DAEC00D8D3BE /* Images.xcassets */,
+				89BB92C41880DAEC00D8D3BE /* MegaHealth-Info.plist */,
+				89BB92C51880DAEC00D8D3BE /* InfoPlist.strings */,
+				89BB92C81880DAEC00D8D3BE /* main.m */,
+				89BB92CA1880DAEC00D8D3BE /* MegaHealth-Prefix.pch */,
+			);
+			name = Resources;
+			path = MegaHealth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +325,8 @@
 				89BB92DF1880DAEC00D8D3BE /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
+			path = MegaHealthTests;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
