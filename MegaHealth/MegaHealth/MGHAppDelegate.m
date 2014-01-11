@@ -33,7 +33,9 @@
     [Parse setApplicationId:@"g9bHtEJNj4FoGlAIL5K9JvSXjvtw0DaAqS3zqLZt"
                   clientKey:@"73SmTxMF72wRBYaflkcNhP1SCyQq6CHPdaxW0qOg"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
     [PFUser enableAutomaticUser];
+    [[PFUser currentUser] saveInBackground];
     
     // Always load this underneath - it's our 'main' section
     MGHTimelineViewController *timelineViewController = [MGHTimelineViewController new];
@@ -43,7 +45,17 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if (![defaults objectForKey:D_FIRST_USE_COMPLETE]) {
         MGHIntroViewController *introViewController = [MGHIntroViewController new];
-        [timelineViewController presentViewController:introViewController animated:NO completion:nil];
+
+        UINavigationController *navigationController = [UINavigationController new];
+        [navigationController setNavigationBarHidden:YES];
+        
+        // Remove the swipe option:
+        if ([navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+            navigationController.interactivePopGestureRecognizer.enabled = NO;
+        }
+        [navigationController setViewControllers:@[introViewController]];
+        
+        [timelineViewController presentViewController:navigationController animated:NO completion:nil];
     }
     
     // Check if workout time:

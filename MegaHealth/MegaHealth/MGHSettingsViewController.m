@@ -23,6 +23,16 @@
     return self;
 }
 
+- (IBAction)doneAction:(id)sender {
+    
+    // Completed the initial setup:
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:D_FIRST_USE_COMPLETE];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // And dismiss!
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

@@ -33,8 +33,7 @@
 - (IBAction)joinAction:(id)sender {
     MGHSettingsViewController *settingsViewController = [MGHSettingsViewController new];
     // Something to set the value.
-//    settingsViewController
-    [self presentViewController:settingsViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:settingsViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

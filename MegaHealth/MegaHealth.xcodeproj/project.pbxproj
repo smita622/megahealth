@@ -38,6 +38,7 @@
 		89BB93141880EE9E00D8D3BE /* MGHTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93131880EE9E00D8D3BE /* MGHTimelineViewController.m */; };
 		89BB93181880F10800D8D3BE /* MGHWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93171880F10800D8D3BE /* MGHWorkout.m */; };
 		89BB931B1880F11900D8D3BE /* MGHContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB931A1880F11900D8D3BE /* MGHContent.m */; };
+		89BB931F1881E0E000D8D3BE /* MGHDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB931E1881E0E000D8D3BE /* MGHDateFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		89BB93191880F11900D8D3BE /* MGHContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHContent.h; sourceTree = "<group>"; };
 		89BB931A1880F11900D8D3BE /* MGHContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHContent.m; sourceTree = "<group>"; };
 		89BB931C1880F5A500D8D3BE /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		89BB931D1881E0E000D8D3BE /* MGHDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHDateFormatter.h; sourceTree = "<group>"; };
+		89BB931E1881E0E000D8D3BE /* MGHDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHDateFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 				89BB930E1880EE4600D8D3BE /* MGHWorkoutViewController.m */,
 				89BB93121880EE9E00D8D3BE /* MGHTimelineViewController.h */,
 				89BB93131880EE9E00D8D3BE /* MGHTimelineViewController.m */,
+				89BB931D1881E0E000D8D3BE /* MGHDateFormatter.h */,
+				89BB931E1881E0E000D8D3BE /* MGHDateFormatter.m */,
 			);
 			name = Classes;
 			path = MegaHealth;
@@ -353,6 +358,7 @@
 			files = (
 				89BB93141880EE9E00D8D3BE /* MGHTimelineViewController.m in Sources */,
 				89BB93061880EE1900D8D3BE /* MGHIntroViewController.m in Sources */,
+				89BB931F1881E0E000D8D3BE /* MGHDateFormatter.m in Sources */,
 				89BB92C91880DAEC00D8D3BE /* main.m in Sources */,
 				89BB930B1880EE3500D8D3BE /* MGHSettingsViewController.m in Sources */,
 				89BB92CD1880DAEC00D8D3BE /* MGHAppDelegate.m in Sources */,

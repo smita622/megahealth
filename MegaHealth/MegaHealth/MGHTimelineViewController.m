@@ -7,8 +7,12 @@
 //
 
 #import "MGHTimelineViewController.h"
+#import "MGHWorkout.h"
 
 @interface MGHTimelineViewController ()
+
+@property (nonatomic, strong) NSMutableOrderedSet *orderedDates;
+@property (nonatomic, strong) NSMutableDictionary *dayDictionary;
 
 @end
 
@@ -18,16 +22,47 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        _orderedDates = [NSMutableOrderedSet new];
+        _dayDictionary = [NSMutableDictionary new];
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+- (void) fetchData {
+    PFQuery *workoutQuery = [MGHWorkout query];
+    [workoutQuery setCachePolicy:kPFCachePolicyCacheThenNetwork];
+    [workoutQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+    [workoutQuery addAscendingOrder:@"date_time"];
+    [workoutQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        // Reset
+        _orderedDates = [NSMutableOrderedSet new];
+        _dayDictionary = [NSMutableDictionary new];
 
+        for (MGHWorkout *workout in objects) {
+            NSString *dayString = [workout dayString];
+            NSMutableArray *array = [_dayDictionary objectForKey:dayString];
+            if (!array) array = [NSMutableArray new];
+            [array addObject:workout];
+            [_dayDictionary setObject:array forKey:dayString];
+            
+            [_orderedDates addObject:dayString];
+        }
+
+        NSLog(@"timeline: %@", _dayDictionary);
+        [self.tableView reloadData];
+    }];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
+//TODO: Is this reallllly the most efficient thing?
+    [self fetchData];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,28 +79,45 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [_orderedDates count];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSArray *array = [_dayDictionary objectForKey:[_orderedDates objectAtIndex:section]];
+    return array.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+/*
+ 
+ Section out by day:
+ 
+ 
+ Cell Types:
+ 1. Workouts
+ 2. Calendar Type
+ 3.
+ 
+ */
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     
     // Configure the cell...
+    NSArray *array = [_dayDictionary objectForKey:[_orderedDates objectAtIndex:indexPath.section]];
+    MGHWorkout *workout = [array objectAtIndex:indexPath.row];
+    [[cell textLabel] setText:[NSString stringWithFormat:@"%@", [workout date_time]]];
     
     return cell;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return [_orderedDates objectAtIndex:section];
 }
 
 /*

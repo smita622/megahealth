@@ -17,5 +17,6 @@
 @property (retain) NSDate *date_time;
 
 + (NSString *)parseClassName;
+- (NSString *)dayString;
 
 @end

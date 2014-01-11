@@ -8,6 +8,7 @@
 
 #import "MGHWorkout.h"
 #import <Parse/PFObject+Subclass.h>
+#import "MGHDateFormatter.h"
 
 @implementation MGHWorkout
 
@@ -18,6 +19,10 @@
 
 + (NSString *)parseClassName {
     return @"workout";
+}
+
+- (NSString *)dayString {
+    return [[MGHDateFormatter dayFormat] stringFromDate:self.date_time];
 }
 
 @end
