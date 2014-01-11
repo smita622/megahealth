@@ -29,6 +29,15 @@
 		89BB92FA1880DD7000D8D3BE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92F91880DD7000D8D3BE /* StoreKit.framework */; };
 		89BB92FC1880DD7900D8D3BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92FB1880DD7900D8D3BE /* SystemConfiguration.framework */; };
 		89BB93011880DE8A00D8D3BE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB93001880DE8A00D8D3BE /* Parse.framework */; };
+		89BB93061880EE1900D8D3BE /* MGHIntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93041880EE1900D8D3BE /* MGHIntroViewController.m */; };
+		89BB93071880EE1900D8D3BE /* MGHIntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BB93051880EE1900D8D3BE /* MGHIntroViewController.xib */; };
+		89BB930B1880EE3500D8D3BE /* MGHSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93091880EE3500D8D3BE /* MGHSettingsViewController.m */; };
+		89BB930C1880EE3500D8D3BE /* MGHSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BB930A1880EE3500D8D3BE /* MGHSettingsViewController.xib */; };
+		89BB93101880EE4600D8D3BE /* MGHWorkoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB930E1880EE4600D8D3BE /* MGHWorkoutViewController.m */; };
+		89BB93111880EE4600D8D3BE /* MGHWorkoutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89BB930F1880EE4600D8D3BE /* MGHWorkoutViewController.xib */; };
+		89BB93141880EE9E00D8D3BE /* MGHTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93131880EE9E00D8D3BE /* MGHTimelineViewController.m */; };
+		89BB93181880F10800D8D3BE /* MGHWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93171880F10800D8D3BE /* MGHWorkout.m */; };
+		89BB931B1880F11900D8D3BE /* MGHContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB931A1880F11900D8D3BE /* MGHContent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +77,22 @@
 		89BB92F91880DD7000D8D3BE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		89BB92FB1880DD7900D8D3BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		89BB93001880DE8A00D8D3BE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "External Frameworks/Parse.framework"; sourceTree = "<group>"; };
+		89BB93031880EE1900D8D3BE /* MGHIntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHIntroViewController.h; sourceTree = "<group>"; };
+		89BB93041880EE1900D8D3BE /* MGHIntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHIntroViewController.m; sourceTree = "<group>"; };
+		89BB93051880EE1900D8D3BE /* MGHIntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGHIntroViewController.xib; sourceTree = "<group>"; };
+		89BB93081880EE3500D8D3BE /* MGHSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHSettingsViewController.h; sourceTree = "<group>"; };
+		89BB93091880EE3500D8D3BE /* MGHSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHSettingsViewController.m; sourceTree = "<group>"; };
+		89BB930A1880EE3500D8D3BE /* MGHSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGHSettingsViewController.xib; sourceTree = "<group>"; };
+		89BB930D1880EE4600D8D3BE /* MGHWorkoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHWorkoutViewController.h; sourceTree = "<group>"; };
+		89BB930E1880EE4600D8D3BE /* MGHWorkoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHWorkoutViewController.m; sourceTree = "<group>"; };
+		89BB930F1880EE4600D8D3BE /* MGHWorkoutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MGHWorkoutViewController.xib; sourceTree = "<group>"; };
+		89BB93121880EE9E00D8D3BE /* MGHTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHTimelineViewController.h; sourceTree = "<group>"; };
+		89BB93131880EE9E00D8D3BE /* MGHTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHTimelineViewController.m; sourceTree = "<group>"; };
+		89BB93161880F10800D8D3BE /* MGHWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHWorkout.h; sourceTree = "<group>"; };
+		89BB93171880F10800D8D3BE /* MGHWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHWorkout.m; sourceTree = "<group>"; };
+		89BB93191880F11900D8D3BE /* MGHContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHContent.h; sourceTree = "<group>"; };
+		89BB931A1880F11900D8D3BE /* MGHContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHContent.m; sourceTree = "<group>"; };
+		89BB931C1880F5A500D8D3BE /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +200,17 @@
 		89BB92FE1880DDB200D8D3BE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				89BB93151880F0B200D8D3BE /* Objects */,
 				89BB92CB1880DAEC00D8D3BE /* MGHAppDelegate.h */,
 				89BB92CC1880DAEC00D8D3BE /* MGHAppDelegate.m */,
+				89BB93031880EE1900D8D3BE /* MGHIntroViewController.h */,
+				89BB93041880EE1900D8D3BE /* MGHIntroViewController.m */,
+				89BB93081880EE3500D8D3BE /* MGHSettingsViewController.h */,
+				89BB93091880EE3500D8D3BE /* MGHSettingsViewController.m */,
+				89BB930D1880EE4600D8D3BE /* MGHWorkoutViewController.h */,
+				89BB930E1880EE4600D8D3BE /* MGHWorkoutViewController.m */,
+				89BB93121880EE9E00D8D3BE /* MGHTimelineViewController.h */,
+				89BB93131880EE9E00D8D3BE /* MGHTimelineViewController.m */,
 			);
 			name = Classes;
 			path = MegaHealth;
@@ -185,6 +219,8 @@
 		89BB92FF1880DDB700D8D3BE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				89BB931C1880F5A500D8D3BE /* Defines.h */,
+				89BB93021880EDCF00D8D3BE /* Nibs */,
 				89BB92CE1880DAEC00D8D3BE /* Images.xcassets */,
 				89BB92C41880DAEC00D8D3BE /* MegaHealth-Info.plist */,
 				89BB92C51880DAEC00D8D3BE /* InfoPlist.strings */,
@@ -193,6 +229,27 @@
 			);
 			name = Resources;
 			path = MegaHealth;
+			sourceTree = "<group>";
+		};
+		89BB93021880EDCF00D8D3BE /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				89BB93051880EE1900D8D3BE /* MGHIntroViewController.xib */,
+				89BB930A1880EE3500D8D3BE /* MGHSettingsViewController.xib */,
+				89BB930F1880EE4600D8D3BE /* MGHWorkoutViewController.xib */,
+			);
+			name = Nibs;
+			sourceTree = "<group>";
+		};
+		89BB93151880F0B200D8D3BE /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				89BB93161880F10800D8D3BE /* MGHWorkout.h */,
+				89BB93171880F10800D8D3BE /* MGHWorkout.m */,
+				89BB93191880F11900D8D3BE /* MGHContent.h */,
+				89BB931A1880F11900D8D3BE /* MGHContent.m */,
+			);
+			name = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,7 +329,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BB92C71880DAEC00D8D3BE /* InfoPlist.strings in Resources */,
+				89BB93111880EE4600D8D3BE /* MGHWorkoutViewController.xib in Resources */,
 				89BB92CF1880DAEC00D8D3BE /* Images.xcassets in Resources */,
+				89BB930C1880EE3500D8D3BE /* MGHSettingsViewController.xib in Resources */,
+				89BB93071880EE1900D8D3BE /* MGHIntroViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +351,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BB93141880EE9E00D8D3BE /* MGHTimelineViewController.m in Sources */,
+				89BB93061880EE1900D8D3BE /* MGHIntroViewController.m in Sources */,
 				89BB92C91880DAEC00D8D3BE /* main.m in Sources */,
+				89BB930B1880EE3500D8D3BE /* MGHSettingsViewController.m in Sources */,
 				89BB92CD1880DAEC00D8D3BE /* MGHAppDelegate.m in Sources */,
+				89BB93101880EE4600D8D3BE /* MGHWorkoutViewController.m in Sources */,
+				89BB931B1880F11900D8D3BE /* MGHContent.m in Sources */,
+				89BB93181880F10800D8D3BE /* MGHWorkout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

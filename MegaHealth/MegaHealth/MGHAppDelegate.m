@@ -8,6 +8,13 @@
 
 #import "MGHAppDelegate.h"
 
+#import "MGHContent.h"
+#import "MGHWorkout.h"
+
+#import "MGHTimelineViewController.h"
+#import "MGHIntroViewController.h"
+#import "MGHSettingsViewController.h"
+
 @implementation MGHAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -18,10 +25,28 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
+    // Parse subclasses
+    [MGHContent registerSubclass];
+    [MGHWorkout registerSubclass];
+
     // Basic Parse Setup:
-    [Parse setApplicationId:@"X9euA4YOpmCImSB74YCFcm7gNHE2sCKHkGPtbZ2i"
-                  clientKey:@"3Kd8WZpk4xFPPKDuUdcubO03EagqsVbkAC25zFcF"];
+    [Parse setApplicationId:@"g9bHtEJNj4FoGlAIL5K9JvSXjvtw0DaAqS3zqLZt"
+                  clientKey:@"73SmTxMF72wRBYaflkcNhP1SCyQq6CHPdaxW0qOg"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFUser enableAutomaticUser];
+    
+    // Always load this underneath - it's our 'main' section
+    MGHTimelineViewController *timelineViewController = [MGHTimelineViewController new];
+    [self.window setRootViewController:timelineViewController];
+    
+    // Check if 'first use' complete:
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (![defaults objectForKey:D_FIRST_USE_COMPLETE]) {
+        MGHIntroViewController *introViewController = [MGHIntroViewController new];
+        [timelineViewController presentViewController:introViewController animated:NO completion:nil];
+    }
+    
+    // Check if workout time:
     
     return YES;
 }
