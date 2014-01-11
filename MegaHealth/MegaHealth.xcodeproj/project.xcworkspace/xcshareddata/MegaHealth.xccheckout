@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5C60C93E-E19E-4DB9-99FA-A9BCE62DEB17</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MegaHealth</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5A884537-DE13-4D2C-8351-E60CC0C6961B</key>
+		<string>https://github.com/smita622/megahealth</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MegaHealth/MegaHealth.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5A884537-DE13-4D2C-8351-E60CC0C6961B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/smita622/megahealth</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5A884537-DE13-4D2C-8351-E60CC0C6961B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5A884537-DE13-4D2C-8351-E60CC0C6961B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>megahealth</string>
+		</dict>
+	</array>
+</dict>
+</plist>
