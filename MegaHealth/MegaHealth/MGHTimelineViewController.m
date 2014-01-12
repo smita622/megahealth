@@ -8,11 +8,19 @@
 
 #import "MGHTimelineViewController.h"
 #import "MGHWorkout.h"
+#import "SORelativeDateTransformer/SORelativeDateTransformer.h"
+
+#import "MGHTimelineCell.h"
+#import "MGHNextWorkoutCell.h"
 
 @interface MGHTimelineViewController ()
 
+@property (nonatomic, strong) UIImageView *backgroundImage;
+@property (nonatomic, strong) UIView *backgroundView;
+
 @property (nonatomic, strong) NSMutableOrderedSet *orderedDates;
 @property (nonatomic, strong) NSMutableDictionary *dayDictionary;
+@property NSIndexPath *nextIndexPath;
 
 @end
 
@@ -22,6 +30,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _orderedDates = [NSMutableOrderedSet new];
         _dayDictionary = [NSMutableDictionary new];
     }
@@ -33,6 +42,7 @@
     [workoutQuery setCachePolicy:kPFCachePolicyCacheThenNetwork];
     [workoutQuery whereKey:@"user" equalTo:[PFUser currentUser]];
     [workoutQuery addAscendingOrder:@"date_time"];
+    [workoutQuery includeKey:@"content"];
     [workoutQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         // Reset
@@ -40,6 +50,7 @@
         _dayDictionary = [NSMutableDictionary new];
 
         for (MGHWorkout *workout in objects) {
+            
             NSString *dayString = [workout dayString];
             NSMutableArray *array = [_dayDictionary objectForKey:dayString];
             if (!array) array = [NSMutableArray new];
@@ -47,10 +58,16 @@
             [_dayDictionary setObject:array forKey:dayString];
             
             [_orderedDates addObject:dayString];
+            
+            if (!_nextIndexPath && [workout.type isEqualToString:@"workout"] && [workout.date_time timeIntervalSinceNow] > 0) {
+                _nextIndexPath = [NSIndexPath indexPathForRow:[array indexOfObject:workout] inSection:[_orderedDates indexOfObject:dayString]];
+            }
+
         }
 
         NSLog(@"timeline: %@", _dayDictionary);
         [self.tableView reloadData];
+        [self.tableView scrollToRowAtIndexPath:_nextIndexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
     }];
 }
 
@@ -61,9 +78,60 @@
     [self fetchData];
 }
 
+- (void) scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    float tableViewHeight = [self.tableView sizeThatFits:CGSizeMake(self.view.frame.size.width, FLT_MAX)].height - self.tableView.frame.size.height;
+    float percentage = self.tableView.contentOffset.y / tableViewHeight;
+    if (percentage < 0.0f) percentage = 0.0f;
+    if (percentage > 1.0f) percentage = 1.0f;
+    
+    CGRect backgroundImageFrame = _backgroundImage.frame;
+    float additionalPixels = self.view.frame.size.height - backgroundImageFrame.size.height;
+    float offset = (percentage * additionalPixels);
+    backgroundImageFrame.origin.y = offset;
+    [_backgroundImage setFrame:backgroundImageFrame];
+    
+    
+//    NSLog(@"offset: %f", off)
+//    NSLog(@"DID SCROLL = %@", NSStringFromCGPoint(scrollView.contentOffset));
+//    [scrollView layoutIfNeeded];
+//    NSLog(@"DID SIZE = %@", NSStringFromCGSize([self.tableView sizeThatFits:CGSizeMake(self.view.frame.size.width, FLT_MAX)]));
+
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"indexpath.1 = %@", indexPath);
+    NSLog(@"indexpath.2 = %@", _nextIndexPath);
+    if (indexPath.section == _nextIndexPath.section && indexPath.row == _nextIndexPath.row) {
+        return 300.0f;
+    };
+    
+    NSArray *array = [_dayDictionary objectForKey:[_orderedDates objectAtIndex:indexPath.section]];
+    MGHWorkout *workout = [array objectAtIndex:indexPath.row];
+    return ([workout.type isEqualToString:@"workout"] ? 80.0f : 110.0f);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _backgroundView = [UIView new];
+    [_backgroundView setBackgroundColor:[UIColor blueColor]];
+    self.tableView.backgroundView = _backgroundView;
+
+    UIImage *bgImage = [UIImage imageNamed:@"mainBackground.jpg"];
+    _backgroundImage = [[UIImageView alloc] initWithImage:bgImage];
+    CGSize imageSize = bgImage.size;
+    [_backgroundImage setFrame:CGRectMake(0, 0, self.view.frame.size.width, imageSize.height*2)];
+    [_backgroundImage setContentMode:UIViewContentModeScaleAspectFill];
+    [_backgroundImage setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    
+    [_backgroundView addSubview:_backgroundImage];
+    
+    UIView *lineView = [UIView new];
+    [lineView setBackgroundColor:[[UIColor whiteColor] colorWithAlphaComponent:0.15f]];
+    [lineView setFrame:CGRectMake(84.0f, 0.0f, 2.0f, _backgroundView.frame.size.height)];
+    [lineView setAutoresizingMask:(UIViewAutoresizingFlexibleHeight)];
+    [_backgroundView addSubview:lineView];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -101,23 +169,40 @@
  */
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *WorkoutCellIdentifier = @"WorkoutCell";
+    static NSString *NextWorkoutCellIdentifier = @"NextWorkoutCell";
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-    }
-    
-    // Configure the cell...
     NSArray *array = [_dayDictionary objectForKey:[_orderedDates objectAtIndex:indexPath.section]];
     MGHWorkout *workout = [array objectAtIndex:indexPath.row];
-    [[cell textLabel] setText:[NSString stringWithFormat:@"%@", [workout date_time]]];
+
+    if (indexPath.section == _nextIndexPath.section && indexPath.row == _nextIndexPath.row) {
+        MGHNextWorkoutCell *cell = [tableView dequeueReusableCellWithIdentifier:NextWorkoutCellIdentifier];
+        
+        if (!cell) {
+            cell = [[MGHNextWorkoutCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NextWorkoutCellIdentifier];
+        }
+        
+        [cell setWorkout:workout];
+        
+        return cell;
+    }
+    
+    MGHTimelineCell *cell = [tableView dequeueReusableCellWithIdentifier:WorkoutCellIdentifier];
+    
+    if (!cell) {
+        cell = [[MGHTimelineCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WorkoutCellIdentifier];
+    }
+    
+    [cell setWorkout:workout];
+//    [cell setNeedsLayout];
     
     return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return [_orderedDates objectAtIndex:section];
+    NSArray *array = [_dayDictionary objectForKey:[_orderedDates objectAtIndex:section]];
+    MGHWorkout *workout = [array objectAtIndex:0];
+    return [[SORelativeDateTransformer registeredTransformer] transformedValue:workout.date_time];
 }
 
 /*

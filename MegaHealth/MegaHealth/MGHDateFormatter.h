@@ -10,7 +10,7 @@
 
 @interface MGHDateFormatter : PFObject
 
-+ (NSDateFormatter *)dayFormat;
-+ (NSDateFormatter *)readableDayFormat;
++ (NSDateFormatter *) dayFormat;
++ (NSDateFormatter *) hourFormat;
 
 @end

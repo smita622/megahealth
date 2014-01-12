@@ -19,13 +19,13 @@
     return dayFormat;
 }
 
-+ (NSDateFormatter *)readableDayFormat {
-    static NSDateFormatter *dayFormat = nil;
-    if (!dayFormat) {
-        dayFormat = [[NSDateFormatter alloc] init];
-        [dayFormat setDateFormat:@"yyyy-MM-dd"];
++ (NSDateFormatter *) hourFormat {
+    static NSDateFormatter *hourFormat = nil;
+    if (!hourFormat) {
+        hourFormat = [[NSDateFormatter alloc] init];
+        [hourFormat setDateFormat:@"H:mm a"];
     }
-    return dayFormat;    
+    return hourFormat;
 }
 
 @end

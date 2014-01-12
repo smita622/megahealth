@@ -39,6 +39,15 @@
 		89BB93181880F10800D8D3BE /* MGHWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93171880F10800D8D3BE /* MGHWorkout.m */; };
 		89BB931B1880F11900D8D3BE /* MGHContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB931A1880F11900D8D3BE /* MGHContent.m */; };
 		89BB931F1881E0E000D8D3BE /* MGHDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB931E1881E0E000D8D3BE /* MGHDateFormatter.m */; };
+		89BB93241881E81F00D8D3BE /* SORelativeDateTransformer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 89BB93211881E81F00D8D3BE /* SORelativeDateTransformer.bundle */; };
+		89BB93251881E81F00D8D3BE /* SORelativeDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93231881E81F00D8D3BE /* SORelativeDateTransformer.m */; };
+		89BB93281882137C00D8D3BE /* Raleway-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BB93271882137C00D8D3BE /* Raleway-Thin.otf */; };
+		89BB932A1882138300D8D3BE /* rechargeLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89BB93291882138300D8D3BE /* rechargeLogo@2x.png */; };
+		89BB932C188214CD00D8D3BE /* introBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89BB932B188214CD00D8D3BE /* introBackground@2x.jpg */; };
+		89BB932F188224F300D8D3BE /* MGHTimelineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB932E188224F300D8D3BE /* MGHTimelineCell.m */; };
+		89BB93321882275400D8D3BE /* MGHNextWorkoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89BB93311882275400D8D3BE /* MGHNextWorkoutCell.m */; };
+		89BB93341882381100D8D3BE /* Raleway-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89BB93331882381100D8D3BE /* Raleway-Medium.otf */; };
+		89BB93361882389800D8D3BE /* mainBackground@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89BB93351882389800D8D3BE /* mainBackground@2x.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +105,18 @@
 		89BB931C1880F5A500D8D3BE /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		89BB931D1881E0E000D8D3BE /* MGHDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHDateFormatter.h; sourceTree = "<group>"; };
 		89BB931E1881E0E000D8D3BE /* MGHDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHDateFormatter.m; sourceTree = "<group>"; };
+		89BB93211881E81F00D8D3BE /* SORelativeDateTransformer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SORelativeDateTransformer.bundle; sourceTree = "<group>"; };
+		89BB93221881E81F00D8D3BE /* SORelativeDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SORelativeDateTransformer.h; sourceTree = "<group>"; };
+		89BB93231881E81F00D8D3BE /* SORelativeDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SORelativeDateTransformer.m; sourceTree = "<group>"; };
+		89BB93271882137C00D8D3BE /* Raleway-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.otf"; sourceTree = "<group>"; };
+		89BB93291882138300D8D3BE /* rechargeLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rechargeLogo@2x.png"; sourceTree = "<group>"; };
+		89BB932B188214CD00D8D3BE /* introBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "introBackground@2x.jpg"; sourceTree = "<group>"; };
+		89BB932D188224F300D8D3BE /* MGHTimelineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHTimelineCell.h; sourceTree = "<group>"; };
+		89BB932E188224F300D8D3BE /* MGHTimelineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHTimelineCell.m; sourceTree = "<group>"; };
+		89BB93301882275400D8D3BE /* MGHNextWorkoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGHNextWorkoutCell.h; sourceTree = "<group>"; };
+		89BB93311882275400D8D3BE /* MGHNextWorkoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGHNextWorkoutCell.m; sourceTree = "<group>"; };
+		89BB93331882381100D8D3BE /* Raleway-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.otf"; sourceTree = "<group>"; };
+		89BB93351882389800D8D3BE /* mainBackground@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "mainBackground@2x.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +224,7 @@
 		89BB92FE1880DDB200D8D3BE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				89BB93261881E82300D8D3BE /* External */,
 				89BB93151880F0B200D8D3BE /* Objects */,
 				89BB92CB1880DAEC00D8D3BE /* MGHAppDelegate.h */,
 				89BB92CC1880DAEC00D8D3BE /* MGHAppDelegate.m */,
@@ -216,6 +238,10 @@
 				89BB93131880EE9E00D8D3BE /* MGHTimelineViewController.m */,
 				89BB931D1881E0E000D8D3BE /* MGHDateFormatter.h */,
 				89BB931E1881E0E000D8D3BE /* MGHDateFormatter.m */,
+				89BB932D188224F300D8D3BE /* MGHTimelineCell.h */,
+				89BB932E188224F300D8D3BE /* MGHTimelineCell.m */,
+				89BB93301882275400D8D3BE /* MGHNextWorkoutCell.h */,
+				89BB93311882275400D8D3BE /* MGHNextWorkoutCell.m */,
 			);
 			name = Classes;
 			path = MegaHealth;
@@ -224,6 +250,11 @@
 		89BB92FF1880DDB700D8D3BE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				89BB93351882389800D8D3BE /* mainBackground@2x.jpg */,
+				89BB932B188214CD00D8D3BE /* introBackground@2x.jpg */,
+				89BB93291882138300D8D3BE /* rechargeLogo@2x.png */,
+				89BB93331882381100D8D3BE /* Raleway-Medium.otf */,
+				89BB93271882137C00D8D3BE /* Raleway-Thin.otf */,
 				89BB931C1880F5A500D8D3BE /* Defines.h */,
 				89BB93021880EDCF00D8D3BE /* Nibs */,
 				89BB92CE1880DAEC00D8D3BE /* Images.xcassets */,
@@ -255,6 +286,24 @@
 				89BB931A1880F11900D8D3BE /* MGHContent.m */,
 			);
 			name = Objects;
+			sourceTree = "<group>";
+		};
+		89BB93201881E81F00D8D3BE /* SORelativeDateTransformer */ = {
+			isa = PBXGroup;
+			children = (
+				89BB93211881E81F00D8D3BE /* SORelativeDateTransformer.bundle */,
+				89BB93221881E81F00D8D3BE /* SORelativeDateTransformer.h */,
+				89BB93231881E81F00D8D3BE /* SORelativeDateTransformer.m */,
+			);
+			path = SORelativeDateTransformer;
+			sourceTree = "<group>";
+		};
+		89BB93261881E82300D8D3BE /* External */ = {
+			isa = PBXGroup;
+			children = (
+				89BB93201881E81F00D8D3BE /* SORelativeDateTransformer */,
+			);
+			name = External;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,10 +382,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89BB93361882389800D8D3BE /* mainBackground@2x.jpg in Resources */,
 				89BB92C71880DAEC00D8D3BE /* InfoPlist.strings in Resources */,
 				89BB93111880EE4600D8D3BE /* MGHWorkoutViewController.xib in Resources */,
+				89BB93341882381100D8D3BE /* Raleway-Medium.otf in Resources */,
+				89BB932A1882138300D8D3BE /* rechargeLogo@2x.png in Resources */,
+				89BB93281882137C00D8D3BE /* Raleway-Thin.otf in Resources */,
 				89BB92CF1880DAEC00D8D3BE /* Images.xcassets in Resources */,
+				89BB932C188214CD00D8D3BE /* introBackground@2x.jpg in Resources */,
 				89BB930C1880EE3500D8D3BE /* MGHSettingsViewController.xib in Resources */,
+				89BB93241881E81F00D8D3BE /* SORelativeDateTransformer.bundle in Resources */,
 				89BB93071880EE1900D8D3BE /* MGHIntroViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,10 +412,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				89BB93141880EE9E00D8D3BE /* MGHTimelineViewController.m in Sources */,
+				89BB93321882275400D8D3BE /* MGHNextWorkoutCell.m in Sources */,
+				89BB93251881E81F00D8D3BE /* SORelativeDateTransformer.m in Sources */,
 				89BB93061880EE1900D8D3BE /* MGHIntroViewController.m in Sources */,
 				89BB931F1881E0E000D8D3BE /* MGHDateFormatter.m in Sources */,
 				89BB92C91880DAEC00D8D3BE /* main.m in Sources */,
 				89BB930B1880EE3500D8D3BE /* MGHSettingsViewController.m in Sources */,
+				89BB932F188224F300D8D3BE /* MGHTimelineCell.m in Sources */,
 				89BB92CD1880DAEC00D8D3BE /* MGHAppDelegate.m in Sources */,
 				89BB93101880EE4600D8D3BE /* MGHWorkoutViewController.m in Sources */,
 				89BB931B1880F11900D8D3BE /* MGHContent.m in Sources */,

@@ -8,9 +8,13 @@
 
 #import "MGHIntroViewController.h"
 #import "MGHSettingsViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MGHIntroViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *logoView;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UILabel *logoLabel;
 @end
 
 @implementation MGHIntroViewController
@@ -24,10 +28,22 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // Styling:
+    
+    _logoView.layer.cornerRadius = _logoView.frame.size.height / 2;
+    _logoView.layer.borderWidth = 0.5f;
+    _logoView.layer.borderColor = [[UIColor whiteColor] colorWithAlphaComponent:0.4f].CGColor;
+    [[_startButton titleLabel] setFont:[UIFont fontWithName:FONT_PRIMARY size:_startButton.titleLabel.font.pointSize]];
+    [_logoLabel setFont:[UIFont fontWithName:FONT_PRIMARY size:_logoLabel.font.pointSize]];
+    [_startButton setTitleColor:COLOR_PRIMARY forState:UIControlStateNormal];
+    _logoLabel.layer.shadowRadius = 2.0f;
+    _logoLabel.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    _logoLabel.layer.shadowColor = [[UIColor blackColor] colorWithAlphaComponent:0.6f].CGColor;
+_logoLabel.layer.shadowOpacity = 1.0;
+    //    [_startButton setShowsTouchWhenHighlighted:NO];
 }
 
 - (IBAction)joinAction:(id)sender {

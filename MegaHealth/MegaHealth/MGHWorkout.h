@@ -15,6 +15,9 @@
 @property (retain) PFUser *user;
 @property BOOL complete;
 @property (retain) NSDate *date_time;
+@property (retain) NSDate *end_date_time;
+@property (retain) NSString *type;
+@property (retain) NSString *title;
 
 + (NSString *)parseClassName;
 - (NSString *)dayString;
