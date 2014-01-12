@@ -58,6 +58,11 @@
         [timelineViewController presentViewController:navigationController animated:NO completion:nil];
     }
     
+    UILocalNotification *localNotification = [UILocalNotification new];
+    [localNotification setFireDate:[NSDate dateWithTimeIntervalSinceNow:15]];
+    [localNotification setAlertBody:@"Time to Recharge!"];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     // Check if workout time:
     
     return YES;

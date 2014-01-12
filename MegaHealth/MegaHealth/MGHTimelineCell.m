@@ -12,6 +12,8 @@
 @interface MGHTimelineCell()
 
 @property (nonatomic, strong) UILabel *timeLabel;
+@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UILabel *locationLabel;
 
 @property (nonatomic, strong) UIView *dotView;
 @property (nonatomic, strong) UIView *lineView;
@@ -36,11 +38,6 @@
     return self;
 }
 
-#define COLOR_CELL_GREEN [UIColor colorWithRed:0.686 green:0.855 blue:0.337 alpha:1.0]
-#define COLOR_CELL_RED [UIColor colorWithRed:0.996 green:0.353 blue:0.251 alpha:1.0]
-#define COLOR_CELL_BLUE [UIColor colorWithRed:0.353 green:0.655 blue:0.843 alpha:1.0]
-#define COLOR_CELL_YELLOW [UIColor colorWithRed:0.98 green:0.757 blue:0.141 alpha:1.0]
-
 - (void) setup {
 
     _detailView = [UIView new];
@@ -57,10 +54,22 @@
     [_timeLabel setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
     [self.contentView addSubview:_timeLabel];
 
+    _titleLabel = [UILabel new];
+    [_titleLabel setBackgroundColor:[UIColor clearColor]];
+    [_titleLabel setTextAlignment:NSTextAlignmentLeft];
+    [_titleLabel setNumberOfLines:0];
+    [_titleLabel setFont:[UIFont fontWithName:FONT_PRIMARY_MINI size:18.0f]];
+    [_titleLabel setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+    [_titleLabel setFrame:CGRectMake(20.0f, 0.0f, _detailView.frame.size.width - 32.0f, _detailView.frame.size.height)];
+    [_detailView addSubview:_titleLabel];
+
     _dotView = [UIView new];
     _dotView.layer.cornerRadius = (DOT_SIZE / 2);
+    _dotView.layer.borderColor = [UIColor whiteColor].CGColor;
     [_dotView setAutoresizingMask:(UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin)];
     [self.contentView addSubview:_dotView];
+    
+    
     
     _lineView = [UIView new];
     [_lineView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
@@ -82,40 +91,54 @@
     // Yello = easy
     // Blue = medium
     // Green = hard
+    
+    UIColor *primaryColor = [UIColor lightGrayColor];
+    
     if ([[workout type] isEqualToString:@"calendar"]) {
-        [_dotView setBackgroundColor:COLOR_CELL_RED];
-        [_lineView setBackgroundColor:COLOR_CELL_RED];
+        primaryColor = COLOR_CELL_RED;
+        [_titleLabel setText:workout.title];
     } else {
+        
+        if ([[workout date_time] timeIntervalSinceNow] > 0) {
+            _dotView.layer.borderWidth = 1.0f;
+        } else {
+            _dotView.layer.borderWidth = 0.0f;
+        }
+        
+        // If content, then content.
+        if ([workout content]) {
+            [_titleLabel setText:workout.title];
+        } else {
+            [_titleLabel setText:@"RECHARGE"];
+        }
+
         switch ([[workout content] difficulty]) {
             case 1:
             case 2:
             case 3:
-                [_dotView setBackgroundColor:COLOR_CELL_YELLOW];
-                [_lineView setBackgroundColor:COLOR_CELL_YELLOW];
+                primaryColor = COLOR_CELL_YELLOW;
                 break;
 
             case 4:
             case 5:
             case 6:
-                [_dotView setBackgroundColor:COLOR_CELL_BLUE];
-                [_lineView setBackgroundColor:COLOR_CELL_BLUE];
+                primaryColor = COLOR_CELL_BLUE;
                 break;
 
             case 7:
             case 8:
             case 9:
-                [_dotView setBackgroundColor:COLOR_CELL_GREEN];
-                [_lineView setBackgroundColor:COLOR_CELL_GREEN];
+                primaryColor = COLOR_CELL_GREEN;
                 break;
-
                 
             default:
-                [_dotView setBackgroundColor:[UIColor lightGrayColor]];
-                [_lineView setBackgroundColor:[UIColor lightGrayColor]];
                 break;
         }
     }
     
+    [_dotView setBackgroundColor:primaryColor];
+    [_lineView setBackgroundColor:primaryColor];
+    [_titleLabel setTextColor:primaryColor];
     
     [self layout];
 }

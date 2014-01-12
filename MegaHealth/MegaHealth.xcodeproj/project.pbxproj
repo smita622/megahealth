@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89A128E71883200800AEFA5F /* HelveticaNeueUltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89A128E61883200800AEFA5F /* HelveticaNeueUltraLight.ttf */; };
+		89A128E91883212800AEFA5F /* helveticaneue-ultraligext.otf in Resources */ = {isa = PBXBuildFile; fileRef = 89A128E81883212800AEFA5F /* helveticaneue-ultraligext.otf */; };
+		89A128EB18832D5B00AEFA5F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A128EA18832D5B00AEFA5F /* Icon@2x.png */; };
+		89A128ED188333DF00AEFA5F /* settingsIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89A128EC188333DF00AEFA5F /* settingsIcon@2x.png */; };
 		89BB92BD1880DAEC00D8D3BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92BC1880DAEC00D8D3BE /* Foundation.framework */; };
 		89BB92BF1880DAEC00D8D3BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92BE1880DAEC00D8D3BE /* CoreGraphics.framework */; };
 		89BB92C11880DAEC00D8D3BE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89BB92C01880DAEC00D8D3BE /* UIKit.framework */; };
@@ -61,6 +65,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		89A128E61883200800AEFA5F /* HelveticaNeueUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HelveticaNeueUltraLight.ttf; sourceTree = "<group>"; };
+		89A128E81883212800AEFA5F /* helveticaneue-ultraligext.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "helveticaneue-ultraligext.otf"; sourceTree = "<group>"; };
+		89A128EA18832D5B00AEFA5F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		89A128EC188333DF00AEFA5F /* settingsIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsIcon@2x.png"; sourceTree = "<group>"; };
 		89BB92B91880DAEC00D8D3BE /* MegaHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MegaHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89BB92BC1880DAEC00D8D3BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		89BB92BE1880DAEC00D8D3BE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -250,9 +258,13 @@
 		89BB92FF1880DDB700D8D3BE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				89A128EC188333DF00AEFA5F /* settingsIcon@2x.png */,
+				89A128EA18832D5B00AEFA5F /* Icon@2x.png */,
+				89A128E81883212800AEFA5F /* helveticaneue-ultraligext.otf */,
 				89BB93351882389800D8D3BE /* mainBackground@2x.jpg */,
 				89BB932B188214CD00D8D3BE /* introBackground@2x.jpg */,
 				89BB93291882138300D8D3BE /* rechargeLogo@2x.png */,
+				89A128E61883200800AEFA5F /* HelveticaNeueUltraLight.ttf */,
 				89BB93331882381100D8D3BE /* Raleway-Medium.otf */,
 				89BB93271882137C00D8D3BE /* Raleway-Thin.otf */,
 				89BB931C1880F5A500D8D3BE /* Defines.h */,
@@ -386,11 +398,15 @@
 				89BB92C71880DAEC00D8D3BE /* InfoPlist.strings in Resources */,
 				89BB93111880EE4600D8D3BE /* MGHWorkoutViewController.xib in Resources */,
 				89BB93341882381100D8D3BE /* Raleway-Medium.otf in Resources */,
+				89A128ED188333DF00AEFA5F /* settingsIcon@2x.png in Resources */,
 				89BB932A1882138300D8D3BE /* rechargeLogo@2x.png in Resources */,
 				89BB93281882137C00D8D3BE /* Raleway-Thin.otf in Resources */,
 				89BB92CF1880DAEC00D8D3BE /* Images.xcassets in Resources */,
+				89A128E91883212800AEFA5F /* helveticaneue-ultraligext.otf in Resources */,
 				89BB932C188214CD00D8D3BE /* introBackground@2x.jpg in Resources */,
+				89A128EB18832D5B00AEFA5F /* Icon@2x.png in Resources */,
 				89BB930C1880EE3500D8D3BE /* MGHSettingsViewController.xib in Resources */,
+				89A128E71883200800AEFA5F /* HelveticaNeueUltraLight.ttf in Resources */,
 				89BB93241881E81F00D8D3BE /* SORelativeDateTransformer.bundle in Resources */,
 				89BB93071880EE1900D8D3BE /* MGHIntroViewController.xib in Resources */,
 			);
@@ -632,6 +648,7 @@
 				89BB92E71880DAEC00D8D3BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89BB92E81880DAEC00D8D3BE /* Build configuration list for PBXNativeTarget "MegaHealthTests" */ = {
 			isa = XCConfigurationList;
@@ -640,6 +657,7 @@
 				89BB92EA1880DAEC00D8D3BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

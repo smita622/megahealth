@@ -13,6 +13,8 @@
 #import "MGHTimelineCell.h"
 #import "MGHNextWorkoutCell.h"
 
+#import "MGHSettingsViewController.h"
+
 @interface MGHTimelineViewController ()
 
 @property (nonatomic, strong) UIImageView *backgroundImage;
@@ -21,6 +23,8 @@
 @property (nonatomic, strong) NSMutableOrderedSet *orderedDates;
 @property (nonatomic, strong) NSMutableDictionary *dayDictionary;
 @property NSIndexPath *nextIndexPath;
+
+@property (nonatomic, strong) UIView *baseBar;
 
 @end
 
@@ -92,6 +96,9 @@
     [_backgroundImage setFrame:backgroundImageFrame];
     
     
+    [_baseBar setFrame:CGRectMake(0, self.view.frame.size.height - 64.0f + self.tableView.contentOffset.y, self.view.frame.size.width, 64.0f)];
+
+    
 //    NSLog(@"offset: %f", off)
 //    NSLog(@"DID SCROLL = %@", NSStringFromCGPoint(scrollView.contentOffset));
 //    [scrollView layoutIfNeeded];
@@ -111,8 +118,36 @@
     return ([workout.type isEqualToString:@"workout"] ? 80.0f : 110.0f);
 }
 
+- (void) settingsAction {
+    MGHSettingsViewController *settingsViewController = [MGHSettingsViewController new];
+    [self presentViewController:settingsViewController animated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _baseBar = [UIView new];
+    [_baseBar setFrame:CGRectMake(0, self.view.frame.size.height - 64.0f, self.view.frame.size.width, 64.0f)];
+    [_baseBar setAutoresizingMask:UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleTopMargin];
+    [_baseBar setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.5f]];
+    [self.view addSubview:_baseBar];
+    
+    UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [settingsButton setFrame:CGRectMake(_baseBar.frame.size.width - 24.0f - 24.0f, 20.0f, 24.0f, 24.0f)];
+    [settingsButton addTarget:self action:@selector(settingsAction) forControlEvents:UIControlEventTouchUpInside];
+    [settingsButton setImage:[UIImage imageNamed:@"settingsIcon"] forState:UIControlStateNormal];
+    [_baseBar addSubview:settingsButton];
+    
+    UIImage *rechargeLogo = [UIImage imageNamed:@"rechargeLogo"];
+    UIImageView *rechargeImageView = [[UIImageView alloc] initWithImage:rechargeLogo];
+    [rechargeImageView setFrame:CGRectMake(21.0f, 23.0f, 11.0f, 22.0f)];
+    [_baseBar addSubview:rechargeImageView];
+    
+    UILabel *rechargeLabel = [[UILabel alloc] initWithFrame:CGRectMake(44.0f, 1.0f, _baseBar.frame.size.width - 90.0f, _baseBar.frame.size.height)];
+    [rechargeLabel setFont:[UIFont fontWithName:FONT_PRIMARY_MINI size:16.0f]];
+    [rechargeLabel setTextColor:[UIColor whiteColor]];
+    [rechargeLabel setText:@"200"];
+    [_baseBar addSubview:rechargeLabel];
     
     _backgroundView = [UIView new];
     [_backgroundView setBackgroundColor:[UIColor blueColor]];
@@ -182,6 +217,7 @@
             cell = [[MGHNextWorkoutCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NextWorkoutCellIdentifier];
         }
         
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
         [cell setWorkout:workout];
         
         return cell;
@@ -192,7 +228,7 @@
     if (!cell) {
         cell = [[MGHTimelineCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:WorkoutCellIdentifier];
     }
-    
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     [cell setWorkout:workout];
 //    [cell setNeedsLayout];
     
@@ -203,6 +239,27 @@
     NSArray *array = [_dayDictionary objectForKey:[_orderedDates objectAtIndex:section]];
     MGHWorkout *workout = [array objectAtIndex:0];
     return [[SORelativeDateTransformer registeredTransformer] transformedValue:workout.date_time];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 50.0f;
+}
+
+- (UIView *) tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *headerView = [UIView new];
+    [headerView setFrame:CGRectMake(0, 0, self.view.frame.size.width, 60.0f)];
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    
+    UILabel *headerLabel = [UILabel new];
+    [headerLabel setFrame:CGRectMake(96.0f, 0.0f, headerView.frame.size.width - 96.0f, headerView.frame.size.height)];
+    [headerLabel setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
+    [headerLabel setBackgroundColor:[UIColor clearColor]];
+    [headerLabel setText:[[self tableView:tableView titleForHeaderInSection:section] uppercaseString]];
+    [headerLabel setFont:[UIFont fontWithName:FONT_PRIMARY size:14.0f]];
+    [headerLabel setTextColor:[UIColor whiteColor]];
+    [headerView addSubview:headerLabel];
+    
+    return headerView;
 }
 
 /*

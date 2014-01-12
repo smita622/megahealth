@@ -30,7 +30,11 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     // And dismiss!
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    if (self.navigationController) {
+        [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)viewDidLoad
